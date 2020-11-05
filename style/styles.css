@@ -14,6 +14,8 @@ body {
     width: 100%;
     height: 100%;
     position: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 #menu {
@@ -24,7 +26,6 @@ body {
     background-color: #067500;
     justify-content: center;
     align-items: center;
-    position: absolute;
     opacity: 0.8;
 }
 
@@ -47,4 +48,101 @@ body {
 
 .menuItem:hover {
     color: gray;
+}
+
+#content {
+    background-color: white;
+    z-index: 1;
+    height: calc(100% - 40px);
+    display: none;
+}
+
+.subpage {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    width: 80%;
+    text-align: center;
+}
+
+.brdaPhotos {
+    display: flex;
+}
+
+.brdaImg {
+    width: 300px;
+    height: 200px;
+}
+
+#drawa {
+    width: 100%;
+}
+
+#drawaHeader {
+    width: 100%;
+}
+
+#drawaHeaderImg {
+    position: absolute;
+    width: 100%;
+    height: 240px;
+    top: 40px;
+}
+
+#drawaTitle {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 15%);
+    color: white;
+    font-size: 80px;
+    opacity: 0.8;
+}
+
+#drawaDescription {
+    display: flex;
+    flex-direction: row;
+    margin-top: 160px;
+}
+
+.drawaColumn {
+    margin: 60px;
+}
+
+.drawaContent {
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    list-style: circle;
+}
+
+.lupawaImg {
+    position: absolute;
+    top: 60px;
+    width: 350px;
+    height: 90%;
+    left: 20px;
+}
+
+#lupawaContent {
+    width: 50%;
+    position: absolute;
+    left: 380px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
