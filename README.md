@@ -1,5 +1,5 @@
 # Motorola Solutions
-This page is made as a taks for Motorola Solutions
+This page is made as a task for Motorola Solutions
 It includes my private pictures and description of rivers, through each I was kayaking.
 
 # Gallery
