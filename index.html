@@ -7,73 +7,113 @@
     <meta name="description" content= "Motorola Task"/>
     <meta name="keywords" content= "motorola solutions, motorola, kayaks, kayak, kajak, splywy kajakowe" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"  /> 
-    <link rel="stylesheet" href="style/styles.css">
-    <script>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <script type="text/javascript">
         function hideLanding() {
-            document.querySelector("#landing").style.display = "none";
+            document.querySelector("#landingImg").style.display = "none";
             return false;
         };
+
         function hideSubpage() {
             document.querySelector("#brda").style.display = "none";
             document.querySelector("#drawa").style.display = "none";
             document.querySelector("#lupawa").style.display = "none";
-            document.querySelector("#brda20").style.display = "none";
+            document.querySelector("#gallery").style.display = "none";
             document.querySelector("#contact").style.display = "none";
             return false;
         };
+
         function hideAll() {
             hideLanding();
             hideSubpage();
             return false;
         }
+
+        function showLanding() {
+            hideSubpage();
+            document.querySelector("#landingImg").style.display = "inline-block";
+            return false;
+        }
+
         function showBrda() {
             hideAll();
             document.querySelector("#content").style.display = "flex";
             document.querySelector("#brda").style.display = "flex";
             return false;
         };
+
         function showDrawa() {
             hideAll();
             document.querySelector("#content").style.display = "flex";
             document.querySelector("#drawa").style.display = "flex";
             return false;
         };
+
         function showLupawa() {
             hideAll();
             document.querySelector("#content").style.display = "flex";
             document.querySelector("#lupawa").style.display = "flex";
             return false;
         };
-        function showBrda20() {
+
+        function showGallery() {
             hideAll();
             document.querySelector("#content").style.display = "flex";
-            document.querySelector("#brda20").style.display = "flex";
+            document.querySelector("#gallery").style.display = "flex";
             return false;
         };
+
         function showContact() {
             hideAll();
             document.querySelector("#content").style.display = "flex";
             document.querySelector("#contact").style.display = "flex";
             return false;
         };
+
+        function sendEmail() {
+            const userName = document.querySelector("#username").value;
+            const userEmail = document.querySelector("#mail").value;
+            const userMsg = document.querySelector("#msg").value;
+
+            if (userName && userEmail && userMsg) {
+                window.open("mailto:" + userEmail + "subject=" + userName + "&body=" + userMsg);
+            } else {
+                alert("Please, provide all informations in the form.")
+            };
+
+            return false;
+        };
     </script>
 </head>
     <body>
         <div id="container">
-            <img id="landing" src="media/landing.jpg" />
+            <img id="landingImg" src="media/landing.jpg" />
+            <div id="landingHeader">
+                Welcome to my world. The world of Kayaks.
+            </div>
             <div id="menu">
-                <div class="menuItem" onclick="return showBrda();">Brda</div>
-                <div class="menuItem" onclick="return showDrawa();">Drawa</div>
-                <div class="menuItem" onclick="return showLupawa();">Łupawa</div>
-                <div class="menuItem" onclick="return showBrda20();">Brda 20</div>
-                <div class="menuItem" onclick="return showContact();">Kontakt</div>
+                <a id="home" href="index.html"><img src="media/home.png"></a>
+                <div class="menuItem" onclick="return showGallery();">GALLERY</div>
+                <div class="menuItem" onclick="return showBrda();">BRDA</div>
+                <div class="menuItem" onclick="return showDrawa();">DRAWA</div>
+                <div class="menuItem" onclick="return showLupawa();">ŁUPAWA</div>
+                <div class="menuItem" onclick="return showContact();">CONTACT</div>
             </div>
 
             <div id="content">
                 <div id="brda" class="subpage">
-                    <div class="title">BRDA</div>
+                    <div class="title">THE BRDA</div>
                     <div class="description">
-                        Brda jest jedną z rzek w północnej Polsce, która stanowi bardzo popularny szlak kajakowy. Niewątpliwym atutem tego cieku wodnego jest jego urozmaicenie. Dość duża różnica wzniesień na trasie, jaką przewidują spływy kajakowe, sprawia, że Brda ma miejscowo bystry nurt. Znaczny odcinek szlaku zlokalizowany jest w otulinie Parku Narodowego Bory Tucholskie oraz na terenie Zaborskiego i Tucholskiego Parku Krajobrazowego. To właśnie piękne krajobrazy oraz urozmaicony krajobraz przyciągają w te regiony coraz więcej wodniaków Brda pomimo miejsc o szybszym nurcie stanowi dość łatwy szlak, na którym swych sił mogą spróbować także początkujący. Istotną zaletą są również łagodne brzegi rzeki o suchym, piaszczystym podłożu, które umożliwiają przyjemny odpoczynek.
+                        <p>
+                            The Brda River is one of the most beautiful water routes both in Poland and Europe. It is a left-side tributary of the Vistula River. The river begins its journey on the hillsides of the Bytowskie Lakeland at 180 metres above sea level and flows into Smołowe Lake; the distance from there to its estuary equals to 239 kilometres. Due to a considerable difference in the altitude between its source and estuary to the Vistula River, the Brda River is rapid. The kayak route starts 5 km farther in Świeszyno on Pietrzykowskie Duże (Głębokie) Lake. The Brda River finishes its course in Bydgoszcz, flowing into the Vistula River in Brdyujście district. It comprises 43 direct tributaries and passes 19 lakes. The Brda River is suitable for kayaking over a distance of 233 kilometres; it takes kayakers 10 – 12 days to cover this distance, depending on how long and frequent stops they take. The Brda River is characterised by its diversity, its diverse and meandering course, numerous lakes, varied landscape, beautiful and wild nature, widespread forests, clean water and plenty of side routes. Those advantages have been attracting a great number of water tourists to the Brda River for years.
+                        </p>
+                        <p>
+                            This long, easy to travel by kayak, and perfectly marked river has two great advantages – a great number of lakes on the route and boundless forests spreading along its entire course. All nature lovers should be delighted. The river bed is hard, covered with gravel, and poorly overgrown over long distances.
+                        </p>
+                        <p>
+                            Most of the route is located in the buffer zone of the Bory Tucholskie National Park and within the area of the Zaborski and Tucholski Scenic Parks. The beauty and diversity of the wildlife parks located here should delight everyone. The extraordinary picturesqueness, the vast forests, the beautiful lakes, the diversified course of the river and its primeval nature are the greatest advantages of this water route considered as one of the most attractive kayak routes in Europe since the inter-war period. It was also one of the favourite routes of Pope John Paul II. The river, despite its rapid section, is an easy route that can be easily recommended to beginner kayakers or even to completely unexperienced kayakers who would like to go kayaking for the first time.
+                        </p>
+                            (Source: <a href="http://www.przechlewo.pl/" target="_blank">Przechlewo.pl</a>)
                     </div>
                     <div id="brdaPhotos">
                         <img class="brdaImg" src="media/brda-1.jpg" />
@@ -88,32 +128,37 @@
                         <div id="drawaTitle">DRAWA</div>
                     </div>
                     <div id="drawaDescription">
-                        <div id="drawaLeft" class="drawaColumn">
-                            <div class="title">Atrakcje</div>
-                            <div class="drawaContent">
-                                <ul>
-                                    <li>Drawski Park Krajobrazowy</li>
-                                    <li>Drawieński Park Narodowy</li>
-                                    <li>Rezerwat - "Drawski Matecznik"</li>
-                                    <li>Elektrownia wodna Kamienna</li>
-                                    <li>Rokokowy pałac we wsi Drawsko</li>
-                                    <li>Poligon wojskowy - zakaz wstępu</li>
-                                    <li>Ruiny zamku z XIII wieku w Złocieńcu</li>
-                                </ul>
+                        <p id="drawaParagraph">
+                            A right-bank tributary of Noteċ, about 200km long with the river-basin area of 3200km². It begins near Połczyn Zdrój, and flows into Noteć south of Krzyż. Average drop of this river is 0,61 promille. The river’s name is old and mysterious. According to language scholars it dates back to the times of the Indo-European language community (from the stem “dreu” – “to hurry” or “to run”). One of the biggest tributaries of Danube carries the same name. At the level of Drawno, the average of 10m³ of water per second runs through Drawa. At the level of Kamienna – already as much as 15m³, and by the estuary to Noteć, in Drawiny – over 20m³. The average annual amplitude of water levels is about 40-50cm.
+                        </p>
+                        <div id="drawaLists">
+                            <div id="drawaLeft" class="drawaColumn">
+                                <div class="title">ATTRACTIONS</div>
+                                <div class="drawaContent">
+                                    <ul>
+                                        <li>Drawski Park Krajobrazowy</li>
+                                        <li>Drawieński Park Narodowy</li>
+                                        <li>Rezerwat - "Drawski Matecznik"</li>
+                                        <li>Elektrownia wodna Kamienna</li>
+                                        <li>Rokokowy pałac we wsi Drawsko</li>
+                                        <li>Poligon wojskowy - zakaz wstępu</li>
+                                        <li>Ruiny zamku z XIII wieku w Złocieńcu</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div id="drawaRight" class="drawaColumn">
-                            <div class="title">Trasy</div>
-                            <div class="drawaContent">
-                                <ul>
-                                    <li>Prostynia - Rościn - 6km</li>
-                                    <li>Rościn - Drawno - 10km</li>
-                                    <li>Drawno - Barnimie - 11km</li>
-                                    <li>Barnimie - Bogdanka - 10km</li>
-                                    <li>Bogdanka - Pstrąg - 15km</li>
-                                    <li>Pstrąg - Stare Osieczno - 11km</li>
-                                    <li>Stare Osieczno - Przyborowo - 16km</li>
-                                </ul>
+                            <div id="drawaRight" class="drawaColumn">
+                                <div class="title">ROUTES</div>
+                                <div class="drawaContent">
+                                    <ul>
+                                        <li>Prostynia - Rościn - 6km</li>
+                                        <li>Rościn - Drawno - 10km</li>
+                                        <li>Drawno - Barnimie - 11km</li>
+                                        <li>Barnimie - Bogdanka - 10km</li>
+                                        <li>Bogdanka - Pstrąg - 15km</li>
+                                        <li>Pstrąg - Stare Osieczno - 11km</li>
+                                        <li>Stare Osieczno - Przyborowo - 16km</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,22 +168,61 @@
                     <img class="lupawaImg" src="media/lupawa-1.jpg" />
                     <div id="lupawaContent">
                         <div class="title">ŁUPAWA</div>
-                        To nie lada wyzwanie zaliczana jest do najtrudniejszych miejscami niebezpiecznych szlaków kajakowych na Pomorzu. Rzeka najpierw toczy swe wody przez interesujące krajobrazowo jezioro Jesień. Kolejno jako wyżynny potok przełamuje się przez pasma moren, zwalonych drzew aby w końcu zmieszać swe wody na jez. Gardno teren Słowiańskiego Parku narodowego. Łupawa to rzeka, która stawia przed kajakarzami bardzo wysokie wymagania więc kto nigdy nie zamoczył wiosła niech lepiej zrezygnuje. Krótko mówiąc Łupawka to rzeka kryjąca na swej trasie dużą ilość przenosek, kamieni, sztucznych spiętrzeń, śluz i elektrowni. Trasa wymarzona dla osób kochających eskapady z dreszczykiem emocji oraz bezpośredni kontakt z naturą. Czas spływu 4 - 6 dni.
+                        <p>
+                            Below you will find a route ideal for those who are not bothered by water in the canoe, are not afraid of rolling over and have already known how to fix a hole in their “ship”. Hold on tight – here’s Łupawa! This wild river reminds  a mountain river with more rapids and obstacles than in a case of a peaceful current. If you manage to stop reading the water for a short while, you will notice beautiful high and steep hills as well as old backwoods covering the banks. It is worth visiting that place if you crave for many stories to tell after you come back...
+                        </p>
+                        <p>
+                            The upper section of Łupawa runs through Lake Jasień which is interesting as far as landscape is concerned (it is the biggest lake of Słupia Valley Landscape Park). Further Łupawa, just like a mountain river, cuts an area of moraines and finally falls into the waters of  Lake Gardno. The upper and middle section provide extraordinary attractions in a form of high steep hills situated near the water as well as old backwoods covering the banks of the river. One has to prepare well for facing that route bearing in mind that although the route itself is not long, sometimes even 4-6 days, which is a standard period for covering the route on Łupawa, are not enough.
+                        </p>
+                        <p>
+                            As there are few people in surrounding area, the river offers first class of purity almost on the entire length. We are also not likely to meet many tourists here opposite to popular canoeing routes.
+                        </p>
+                        <p>
+                            Canoeing down Łupawa is an option for those who crave for real adventure and dislike getting bored while paddling. Additional attraction of this route is the possibility of organizing a one day trip to Słowiński National Park and observing the panorama of the Baltic coast from the tops of the highest dunes, reaching 40 m. Remember that entering Lake Gardno requires the permission of the management of Słowiński National Park. As far as the lake itself is concerned its coastal location results here in high waves and one is forced to move against the wind which requires much strength and it is often dangerous.
+                        </p>
                     </div>
                 </div>
 
-                <div id="brda20" class="subpage">
-                    <div class="description">
-                        Hello brda20
+                <div id="gallery" class="subpage">
+                    <div id="photos">
+                        <img id="photo" src="media/brda-1.jpg" />
+                        <img id="photo" src="media/brda-3.jpg" />
+                        <img id="photo" src="media/lupawa-1.jpg" />
+                        <img id="photo" src="media/lupawa-2.jpg" />
+                        <img id="photo" src="media/landing.jpg" />
+                        <img id="photo" src="media/brda-2.jpg" />
                     </div>
                 </div>
 
-                <div id="contact" class="subpage">
-                    <div class="description">
-                        Hello contact
+                <div id="contact">
+                    <div id="about">
+                        <img id="profile" src="media/profile.jpg" />
+                        <div id="aboutText">
+                            <p id="name">My name is Tomasz.</p>
+                            <div id="motivation">
+                                <p>I am passionate about kayaking, motorbike and motorcycle expeditions.</p>
+                                <p>I belong to the group of Cracovian kayaking freaks and we have been organizing annual kayaking trips for over 20 years.</p>
+                                <p>I was born and raised in Krakow and I spent my teenage years here.</p>
+                                <p>I was educated in New York and London, where I lived for over 17 years in total.</p>
+                                <p>Regarding new technologies, I was persuaded to learn coding by a friend of mine who once said that with my English and my persistence to achieve goals and enthusiasm, I can certainly manage.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+
+                    <form id="contactForm" method="post">
+                        <div id="user">
+                            <label for="username">Name: </label>
+                            <input type="text" id="username" placeholder="Enter your name"/>
+                            <label for="mail">E-mail: </label>
+                            <input type="email" id="mail" placeholder="Give your email"/>
+                        </div>
+                        <div id="message">
+                            <label for="msg">Message:</label>
+                            <textarea id="msg" name="userMessage"></textarea>
+                        </div>
+                        <button type="submit" onclick=" return sendEmail();">SEND</button>
+                    </form>
+
         </div>
     </body>
 </html>
